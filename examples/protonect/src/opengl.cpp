@@ -28,7 +28,7 @@
 #include <libfreenect2/threading.h>
 
 #include <iostream>
-
+#include <GL/glut.h>
 namespace libfreenect2
 {
 
@@ -40,13 +40,18 @@ OpenGLContext::OpenGLContext(GLFWwindow *ctx)
   glew_ctx = new GLEWContext();
 
   ChangeCurrentOpenGLContext change_ctx(*this);
-
+  int argc = 0;
+  char** argv = NULL;
+  // glutInit(&argc, argv);
+  // glutInitDisplayMode(GLUT_RGBA);
+  
   glewExperimental = GL_TRUE;
   GLenum r = glewInit();
 
   if(r != GLEW_OK)
   {
     std::cerr << "[OpenGLContext] failed to initialize glew for the current context!" << std::endl;
+    std::cerr << glewGetErrorString(r) << std::endl;
   }
 }
 

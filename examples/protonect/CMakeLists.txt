@@ -55,10 +55,10 @@ if (APPLE)
 endif()
 
 SET(RESOURCES_INC_FILE "${MY_DIR}/src/resources.inc")
-GENERATE_RESOURCES(${RESOURCES_INC_FILE} ${MY_DIR} 
-  11to16.bin 
-  xTable.bin 
-  zTable.bin 
+GENERATE_RESOURCES(${RESOURCES_INC_FILE} ${MY_DIR}
+  11to16.bin
+  xTable.bin
+  zTable.bin
   src/shader/debug.fs
   src/shader/default.vs
   src/shader/filter1.fs
@@ -74,20 +74,20 @@ ADD_LIBRARY(freenect2 SHARED
   src/opengl.cpp
   src/transfer_pool.cpp
   src/event_loop.cpp
-  
+
   src/double_buffer.cpp
   src/frame_listener_impl.cpp
-  
+
   src/rgb_packet_stream_parser.cpp
   src/rgb_packet_processor.cpp
   src/turbo_jpeg_rgb_packet_processor.cpp
-  
+
   src/depth_packet_stream_parser.cpp
   src/depth_packet_processor.cpp
   src/cpu_depth_packet_processor.cpp
   src/opengl_depth_packet_processor.cpp
   src/resource.cpp
-  
+
   src/usb_control.cpp
   src/command_transaction.cpp
   src/libfreenect2.cpp
@@ -102,6 +102,7 @@ TARGET_LINK_LIBRARIES(freenect2
   ${LIBFREENECT2_THREADING_LIBRARIES}
   GLEWmx
   glfw
+  glut
   ${GLFW_LIBRARIES}
 )
 
@@ -112,11 +113,11 @@ ADD_EXECUTABLE(test_opengl
 TARGET_LINK_LIBRARIES(test_opengl
   freenect2
 )
-  
+
 ADD_EXECUTABLE(Protonect
   Protonect.cpp
 )
-  
+
 TARGET_LINK_LIBRARIES(Protonect
   freenect2
 )

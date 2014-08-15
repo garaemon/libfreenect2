@@ -35,6 +35,7 @@
 #include <libfreenect2/libfreenect2.hpp>
 #include <libfreenect2/frame_listener_impl.h>
 #include <libfreenect2/threading.h>
+#include <GL/glut.h>
 
 bool shutdown = false;
 
@@ -45,6 +46,9 @@ void sigint_handler(int s)
 
 int main(int argc, char *argv[])
 {
+  glutInit(&argc, argv);
+  glutCreateWindow("GLEW Test");
+	
   std::string program_path(argv[0]);
   size_t executable_name_idx = program_path.rfind("Protonect");
 
