@@ -319,7 +319,7 @@ struct OpenGLDepthPacketProcessorImpl
 
   double timing_current_start;
 
-  static const bool do_debug = true;
+  static const bool do_debug = false;
 
   struct Vertex
   {
